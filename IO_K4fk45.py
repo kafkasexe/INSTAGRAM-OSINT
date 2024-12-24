@@ -4,10 +4,10 @@ import random
 from colorama import Fore, init
 import instaloader
 
-# Colorama başlatma
+
 init(autoreset=True)
 
-# Dünya figürü
+
 world_fig = """
      _____
     /     \\
@@ -17,29 +17,29 @@ world_fig = """
      |||||
 """
 
-# K4FK45 TARAFINDAN YAPILMIŞTIR yazısı
+
 def show_intro():
     os.system('cls' if os.name == 'nt' else 'clear')
     print(Fore.GREEN + world_fig)
     print(Fore.GREEN + "\n\nK4FK45 TARAFINDAN YAPILMIŞTIR!\n")
-    time.sleep(2)  # 2 saniye bekleme
+    time.sleep(2)  
 
-# Matrix sayıları efekti
+
 def matrix_effect():
     os.system('cls' if os.name == 'nt' else 'clear')
-    for _ in range(20):  # Ekrana 20 satır döktürür
+    for _ in range(20):  
         line = ''.join(random.choice("01") for _ in range(80))
         print(Fore.GREEN + line)
         time.sleep(0.1)
 
-# K4FK45 TARAFINDAN YAPILMIŞTIR yazısı Matrix sonrasında
+
 def show_signature():
     os.system('cls' if os.name == 'nt' else 'clear')
-    print(Fore.GREEN + "\n" * 10)  # Ekranın ortasına almak için boş satırlar
+    print(Fore.GREEN + "\n" * 10) 
     print(Fore.GREEN + "K4FK45 TARAFINDAN YAPILMIŞTIR!")
-    time.sleep(3)  # 3 saniye bekleme
+    time.sleep(3)  
 
-# Instagram veri çekme fonksiyonu
+
 def get_instagram_data(username):
     try:
         loader = instaloader.Instaloader()
@@ -56,16 +56,16 @@ def get_instagram_data(username):
     except Exception as e:
         return f"Error retrieving Instagram data: {e}"
 
-# Ana program
+
 if __name__ == "__main__":
-    show_intro()  # Dünya figürü ve yazı
-    matrix_effect()  # Matrix sayı efekti
-    show_signature()  # Ortada K4FK45 yazısı
+    show_intro()  
+    matrix_effect()  
+    show_signature()  
     
-    # Kullanıcıdan Instagram kullanıcı adını sor
+
     instagram_username = input(Fore.GREEN + "\nLütfen Instagram kullanıcı adını girin: ")
     
-    # Kullanıcı bilgilerini çek ve ekrana yazdır
+   
     data = get_instagram_data(instagram_username)
     
     if isinstance(data, dict):
